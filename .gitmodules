@@ -1,0 +1,4 @@
+[submodule "debian.live-team.live-images"]
+	path = salsa.debian.org.live-team.live-images
+	url = https://salsa.debian.org/live-team/live-images.git
+	branch = debian
