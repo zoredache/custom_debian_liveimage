@@ -13,10 +13,16 @@ case "$(dpkg --print-architecture)" in
 esac
 
 lb config noauto \
+	--archive-areas "main contrib non-free non-free-firmware" \
+	--backports true \
 	--clean \
-	--ignore-system-defaults \
-	--mode debian \
 	--debian-installer live \
-	--linux-packages "linux-image linux-headers" \
-	--source "${_SOURCE}" \
+	--distribution bookworm \
+	--ignore-system-defaults \
+	--linux-packages "linux-image-6.5.0-0.deb12.4 linux-headers-6.5.0-0.deb12.4" \
+	--linux-flavours "amd64" \
+	--memtest memtest86+ \
+	--mode debian \
+	--utc-time true \
+	--source false \
 "${@}"

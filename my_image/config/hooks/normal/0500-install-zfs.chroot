@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+apt-get install --assume-yes --target-release bookworm-backports \
+    zfs-dkms zfsutils-linux
+
+apt-get install --assume-yes zfsnap sanoid
