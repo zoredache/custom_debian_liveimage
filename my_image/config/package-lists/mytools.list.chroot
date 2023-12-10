@@ -3,9 +3,11 @@ ansible-lint
 apache2-utils
 bind9-host
 curl
+debootstrap
 dnsutils
 ethtool
 fping
+gdisk
 git
 htop
 iftop
@@ -53,6 +55,7 @@ speedtest-cli
 strace
 tcpdump
 tcptraceroute
+tmux
 tshark
 usbutils
 vim-tiny
