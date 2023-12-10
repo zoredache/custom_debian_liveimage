@@ -13,7 +13,7 @@ if [ -f /.dockerenv ]; then
 
     BUILDIR="$(pwd)/my_image"
     TMPDIR=$(mktemp -d)
-    rsync -va ${BUILDIR}/. ${TMPDIR}/.
+    rsync -va ${BUILDIR}/. ${TMPDIR}/. --exclude 'live-image-amd64.hybrid.**'
     cd ${TMPDIR}
 
     lb clean
