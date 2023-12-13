@@ -2,7 +2,12 @@
 
 set -e
 
+# go with the backports for newer release from the backports
 apt-get install --assume-yes --target-release bookworm-backports \
     zfs-dkms zfsutils-linux
 
+# add snapshot/sync tools
 apt-get install --assume-yes zfsnap sanoid
+
+# assuing we will be using ZFSBootMenu
+apt-get install --assume-yes efibootmgr
