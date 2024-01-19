@@ -47,3 +47,7 @@ Steps followed to create this custom image
     git add my_image/config/package-lists/mytools.list.chroot
     git add my_image/config/preseed/preseed.cfg.chroot
     git commit -m 'Customizations for my image'
+
+Copy the isos
+
+    cp -v my_image/live-image-amd64.hybrid.is* /mnt/d/Hyper-V/
