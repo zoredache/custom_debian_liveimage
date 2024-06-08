@@ -1,10 +1,10 @@
 #!/bin/bash
 set -xeuo pipefail
 
-export http_proxy=http://192.168.32.10:3128/
-export https_proxy=http://192.168.32.10:3128/
-export HTTP_PROXY=http://192.168.32.10:3128/
-export HTTPS_PROXY=http://192.168.32.10:3128/
+export http_proxy=http://cache.ops.zoredache.info:3128/
+export https_proxy=${http_proxy}
+export HTTP_PROXY=${http_proxy}
+export HTTPS_PROXY=${http_proxy}
 
 if [ -f /.dockerenv ]; then
 

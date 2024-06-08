@@ -1,14 +1,20 @@
 ansible
 ansible-lint
 apache2-utils
+basez
+bind9-dnsutils
 bind9-host
+bsdextrautils
 curl
+debian-goodies
 debootstrap
+dkms
 dnsutils
 ethtool
 fping
 gdisk
 git
+git-extras
 htop
 iftop
 iotop
@@ -33,6 +39,7 @@ nload
 nmap
 openssh-client
 openssl
+pwgen
 python3-bcrypt
 python3-cryptography
 python3-dnspython
@@ -50,6 +57,7 @@ python3-six
 python3-winrm
 radvdump
 rsync
+smartmontools
 socat
 speedtest-cli
 strace
@@ -61,4 +69,7 @@ usbutils
 vim-tiny
 virt-what
 wget
+xxd
+xz-utils
 yamllint
+zstd
