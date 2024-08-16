@@ -28,7 +28,9 @@ if [ -f /.dockerenv ]; then
        ${BUILDIR}/live-image-amd64.hybrid.iso
     cp ${TMPDIR}/live-image-amd64.hybrid.iso.SHA256 \
        ${BUILDIR}/live-image-amd64.hybrid.iso.SHA256
-
+    chown --reference ${BUILDIR} \
+       ${BUILDIR}/live-image-amd64.hybrid.iso \
+       ${BUILDIR}/live-image-amd64.hybrid.iso.SHA256
     exit
 
 else
