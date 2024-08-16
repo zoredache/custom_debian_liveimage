@@ -20,7 +20,7 @@ lb config noauto \
 	--debian-installer-gui true \
 	--distribution bookworm \
 	--ignore-system-defaults \
-	--linux-packages "linux-image-6.5.0-0.deb12.4 linux-headers-6.5.0-0.deb12.4" \
+	--linux-packages "linux-image-6.9.7+bpo linux-headers-6.9.7+bpo" \
 	--linux-flavours "amd64" \
 	--memtest memtest86+ \
 	--mode debian \
