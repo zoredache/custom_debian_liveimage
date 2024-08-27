@@ -11,6 +11,7 @@ debian-goodies
 debootstrap
 dkms
 dnsutils
+efibootmgr
 ethtool
 fping
 gdisk
