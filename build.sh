@@ -14,6 +14,9 @@ if [ -f /.dockerenv ]; then
     BUILDIR="$(pwd)/my_image"
     TMPDIR=$(mktemp -d)
     rsync -va ${BUILDIR}/. ${TMPDIR}/. --exclude 'live-image-amd64.hybrid.**'
+    chown root:root -R \
+      ${TMPDIR}/config/includes.chroot/root/ \
+      ${TMPDIR}/config/includes.chroot/etc/ssh/
     cd ${TMPDIR}
 
     lb clean
@@ -35,6 +38,16 @@ if [ -f /.dockerenv ]; then
 
 else
 
+    # inject known_hosts
+    mkdir -p my_image/config/includes.chroot/etc/ssh/
+    grep @cert-authority /etc/ssh/ssh_known_hosts ~/.ssh/known_hosts -h | \
+      sort -u > my_image/config/includes.chroot/etc/ssh/ssh_known_hosts
+    # inject authorized_keys
+    mkdir -p my_image/config/includes.chroot/root/.ssh/
+    cat ~/.ssh/authorized_keys | \
+      sort -u > my_image/config/includes.chroot/root/.ssh/authorized_keys
+
+    # build with docker
     docker run --rm -it \
       --cap-add=SYS_CHROOT --cap-add SYS_ADMIN --cap-add MKNOD \
       -w /project \

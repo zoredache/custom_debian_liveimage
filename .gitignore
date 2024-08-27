@@ -1,1 +1,3 @@
 my_image/**live-image-amd64.hybrid.iso**
+my_image/config/includes.chroot/etc/ssh/ssh_known_hosts
+my_image/config/includes.chroot/root/.ssh/authorized_keys
