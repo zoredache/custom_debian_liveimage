@@ -16,6 +16,7 @@ lb config noauto \
 	--archive-areas "main contrib non-free non-free-firmware" \
 	--backports true \
 	--clean \
+	--bootappend-live 'boot=live components splash noeject' \
 	--debian-installer netboot \
 	--debian-installer-gui true \
 	--distribution bookworm \
