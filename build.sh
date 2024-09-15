@@ -1,7 +1,8 @@
 #!/bin/bash
 set -xeuo pipefail
 
-export http_proxy=http://cache.ops.zoredache.info:3128/
+# you can run with http_proxy=http://foo ./build.sh
+export http_proxy=${http_proxy:=http://cache.ops.zoredache.info:3128/}
 export https_proxy=${http_proxy}
 export HTTP_PROXY=${http_proxy}
 export HTTPS_PROXY=${http_proxy}
@@ -51,6 +52,7 @@ else
     docker run --rm -it \
       --cap-add=SYS_CHROOT --cap-add SYS_ADMIN --cap-add MKNOD \
       -w /project \
+      -e http_proxy=${http_proxy} \
       -v $(pwd):/project \
       debian:bookworm-slim \
       /bin/bash build.sh
