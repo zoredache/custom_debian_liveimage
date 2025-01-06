@@ -14,6 +14,7 @@ dnsutils
 efibootmgr
 ethtool
 fping
+gddrescue
 gdisk
 git
 git-extras
@@ -35,6 +36,7 @@ ltrace
 mtr-tiny
 ndisc6
 netcat-openbsd
+nfs-client
 nftables
 ngrep
 nload
@@ -57,6 +59,7 @@ python3-requests-kerberos
 python3-scapy
 python3-six
 python3-winrm
+qemu-utils
 radvdump
 rsync
 smartmontools
