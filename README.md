@@ -9,16 +9,17 @@ Steps to build the custom image if you have docker installed
 
 - Clone this repo to your local system
 - Change into the directory
-- Edit build.sh, and change or comment out proxy
+- Edit build.sh if needed
+  - Might need to edit or change the http_proxy
+  - Might want to comment out ssh authorized_keys/ssh_known_hosts injection
 - Run build.sh
+  - You can specify the proxy on the cli `http_proxy=http://foo:3128 ./build.sh`
 
 Steps followed to create this custom image
 
     apt-get update && apt-get -y install live-build git
 
     git config --global --add safe.directory /project
-    git config --global user.email "zoredache@gmail.com"
-    git config --global user.name "Chris Francy"
 
     git init --initial-branch=main
     git submodule add -b debian --name debian.live-team.live-images https://salsa.debian.org/live-team/live-images.git salsa.debian.org.live-team.live-images
@@ -47,7 +48,3 @@ Steps followed to create this custom image
     git add my_image/config/package-lists/mytools.list.chroot
     git add my_image/config/preseed/preseed.cfg.chroot
     git commit -m 'Customizations for my image'
-
-Copy the isos
-
-    cp -v my_image/live-image-amd64.hybrid.is* /mnt/d/Hyper-V/

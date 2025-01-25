@@ -2,7 +2,7 @@
 set -xeuo pipefail
 
 # you can run with http_proxy=http://foo ./build.sh
-export http_proxy=${http_proxy:=http://cache.ops.zoredache.info:3128/}
+export http_proxy=${http_proxy:=http://example:3128/}
 export https_proxy=${http_proxy}
 export HTTP_PROXY=${http_proxy}
 export HTTPS_PROXY=${http_proxy}
